@@ -7,7 +7,7 @@
   min-height: 100%;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
 }
@@ -18,21 +18,24 @@
 }
 
 #logo {
-  width: 130px;
-  height: 130px;
-  background-color: black;
+  width: 150px;
+  height: 150px;
+  background-color: hsla(0, 0%, 5%, 0.8);
   border-radius: 50%;
   font-family: Noto Sans Mono, monospace, sans-serif;
+  font-weight: 300;
   font-size: 24px;
   color: #04DE00;
-  line-height: 115px;
+  line-height: 140px;
   text-align: center;
-  margin: 20px;
+  margin: 30px;
+  border: 1px dotted ghostwhite;
+  overflow: hidden;
 }
 
-.greater-than {
-  animation: blink 2s linear infinite;
-  animation-iteration-count: 3;
+#logo:hover {
+  border: 2px dotted #04DE00;
+  font-weight: 400;
 }
 
 @keyframes blink {
@@ -47,6 +50,11 @@
   }
 }
 
+.greater-than {
+  animation: blink 2s linear infinite;
+  animation-iteration-count: 3;
+}
+
 
 nav {
  
@@ -54,37 +62,132 @@ nav {
 
 nav ul {
   list-style-type: none;
-  padding: 16px;
+  padding: 16px 0;
+  margin: 30px;
 }
 
 nav li {
   display: inline;
-  
-
 }
 
 nav a {
-  font-weight: lighter;
+  font-family: 'Noto Sans Mono', monospace, sans-serif;
+  font-weight: 100;
   color: white;
   text-decoration: none;
-  padding: 8px 20px;
+  padding: 8px 18px;
   margin: 0 10px;
-  border: 1px solid ghostwhite;
+  border: 1px dotted ghostwhite;
   border-radius: 3px;
-  
+}
+
+nav a:hover {
+  color: #04DE00;
+  font-weight: 300;
+  border: 2px dotted #04DE00;
+  background-color: hsla(0, 0%, 5%, 0.8);
 }
 
 body {
+  background-color: #00162F;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: normal;
-  background-color: #00162F;
   color: ghostwhite;
 }
 
-h1 {
-  color: ghostwhite;
+main {
+ 
 }
 
 .homepage-main-text {
-  vertical-align: middle;
+  position: relative;
+  top: 30px;
+  left: 20%;
+  width: 55%;
+}
+
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  color: ghostwhite;
+}
+
+.h1-large {
+  font-family: 'Noto Sans Mono', monospace, sans-serif;
+  font-size: 100px;
+  font-weight: 100;
+  color: #04DE00;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .header-row-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+  }
+  
+  .header-parts {
+    width: 100%;
+  }
+
+  #logo {
+    margin: 30px 0 0;
+  }
+
+  nav {
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav li {
+    display: block;
+    padding: 4px 0;
+  }
+  
+  nav a {
+    font-family: 'Noto Sans Mono', monospace, sans-serif;
+    font-weight: 100;
+    color: white;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    border: none;
+    background-color: hsla(0, 0%, 5%, 0.0);
+  }
+  
+  nav a:hover {
+    color: #04DE00;
+    font-weight: 300;
+    background-color: none;
+    border: none;
+    background-color: hsla(0, 0%, 5%, 0.0);
+  }
+
+  .homepage-main-text {
+    position: relative;
+    top: 40px;
+    left: 15%;
+    text-align: left;
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 1.4em;
+    color: ghostwhite;
+  }
+  
+  .h1-large {
+    font-family: 'Noto Sans Mono', monospace, sans-serif;
+    font-size: 100px;
+    font-size: 2em;
+    font-weight: 100;
+    color: #04DE00;
+  }
+
 }
