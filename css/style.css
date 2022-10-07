@@ -3,13 +3,24 @@
   padding: 0;
 }
 
+body {
+  background-color: hsla(212, 100%, 9%, 1);
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: normal;
+  color: ghostwhite;
+}
+
+a {
+  text-decoration: none;
+}
+
 .header-row-container {
   min-height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .header-parts {
@@ -18,15 +29,15 @@
 }
 
 #logo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   background-color: hsla(0, 0%, 5%, 0.8);
   border-radius: 50%;
   font-family: Noto Sans Mono, monospace, sans-serif;
   font-weight: 300;
-  font-size: 27px;
-  color: #04DE00;
-  line-height: 143px;
+  font-size: 22px;
+  color: hsl(119, 100%, 44%);
+  line-height: 110px;
   text-align: center;
   margin: 30px;
   border: 1px dotted ghostwhite;
@@ -34,7 +45,7 @@
 }
 
 #logo:hover {
-  border: 2px dotted #04DE00;
+  border: 2px dotted hsl(119, 100%, 44%);
   font-weight: 400;
   margin: 29px;
 }
@@ -56,9 +67,7 @@
   animation-iteration-count: 3;
 }
 
-
 nav {
- 
 }
 
 nav ul {
@@ -72,7 +81,7 @@ nav li {
 }
 
 nav a {
-  font-family: 'Noto Sans Mono', monospace, sans-serif;
+  font-family: "Noto Sans Mono", monospace, sans-serif;
   font-weight: 100;
   color: white;
   text-decoration: none;
@@ -83,53 +92,133 @@ nav a {
 }
 
 nav a:hover {
-  color: #04DE00;
+  color: #04de00;
   font-weight: 300;
-  border: 2px dotted #04DE00;
+  border: 2px dotted #04de00;
   background-color: hsla(0, 0%, 5%, 0.8);
   margin: 0 9px;
 }
 
-body {
-  background-color: #00162F;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: normal;
-  color: ghostwhite;
-}
-
 main {
- 
 }
 
 .homepage-main-text {
   position: relative;
-  top: 20px;
-  left: 20%;
+  top: -450px;
+  left: 19%;
   width: 55%;
+  z-index: 1;
 }
 
 h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 30px;
   font-weight: 300;
   color: ghostwhite;
 }
 
 .h1-large {
-  font-family: 'Noto Sans Mono', monospace, sans-serif;
+  font-family: "Noto Sans Mono", monospace, sans-serif;
   font-size: 100px;
   font-weight: 100;
-  color: #04DE00;
+  color: hsl(119, 100%, 44%);
 }
 
+.h1-medium {
+  font-family: "Noto Sans Mono", monospace, sans-serif;
+  font-size: 70px;
+  font-weight: 100;
+  color: hsl(119, 100%, 44%);
+}
+
+.about-me-par {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 24px;
+  font-weight: 100;
+  line-height: 1.8em;
+  color: ghostwhite;
+  padding-top: 20px;
+}
+
+.sagr-avi {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.row {
+  display: inline;
+}
+
+.inner-row-column {
+  display: inline-block;
+}
+
+.right-align {
+  margin-left: 300px;
+}
+
+/* CSS grid overlapping boxes */
+
+.outer-container {
+  width: 100%;
+  margin-top: -80px;
+}
+.h1-container {
+  margin: 0 auto;
+  display: grid;
+  grid-template: repeat(12, 50px) / repeat(24, 50px);
+  height: 600px;
+  width: 1200px;
+}
+.h1-top-box {
+  grid-area: 1 / 6 / span 4 / span 4;
+  background-color: hsla(0, 0%, 30%, 0.8);
+}
+.h1-middle-box {
+  grid-area: 3 / 3 / span 8 / span 15;
+  background-color: hsla(212, 90%, 20%, 0.8);
+  z-index: 1;
+}
+.h1-bottom-box {
+  grid-area: 8 / 15 / span 4 / span 7;
+  background-color: hsla(119, 20%, 44%, 0.5);
+  opacity: 80%;
+}
+
+/* CSS grid for about me page */
+
+.about-me-outer-container {
+  width: 95%;
+}
+
+.aboutme-inner-container {
+  display: grid;
+  grid-template: 1fr 2fr 1fr / 150px 2fr 1fr 1fr 1fr 150px;
+}
+
+.aboutme-left {
+  grid-area: 1 / 2 / span 3 / span 2;
+}
+
+.aboutme-right {
+  grid-area: 2 / 4 / span 1 / span 2;
+}
+/* media queries */
+
 @media only screen and (max-width: 600px) {
+  .mobile-hide {
+    display: none;
+    height: 0;
+    width: 0;
+  }
 
   .header-row-container {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      justify-content: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
   }
-  
+
   .header-parts {
     width: 100%;
   }
@@ -141,55 +230,54 @@ h1 {
   nav {
     text-align: center;
   }
-  
+
   nav ul {
     list-style-type: none;
     padding: 0;
   }
-  
+
   nav li {
     display: block;
     padding: 4px 0;
   }
-  
+
   nav a {
-    font-family: 'Noto Sans Mono', monospace, sans-serif;
+    font-family: "Noto Sans Mono", monospace, sans-serif;
     font-weight: 100;
     color: white;
     text-decoration: underline;
     text-decoration-thickness: 2px;
     border: none;
-    background-color: hsla(0, 0%, 5%, 0.0);
+    background-color: hsla(0, 0%, 5%, 0);
   }
-  
+
   nav a:hover {
-    color: #04DE00;
+    color: #04de00;
     font-weight: 300;
     background-color: none;
     border: none;
-    background-color: hsla(0, 0%, 5%, 0.0);
+    background-color: hsla(0, 0%, 5%, 0);
   }
 
   .homepage-main-text {
     position: relative;
-    top: 40px;
+    top: 80px;
     left: 15%;
     text-align: left;
   }
 
   h1 {
-    font-family: 'Cormorant Garamond', serif;
+    font-family: "Cormorant Garamond", serif;
     font-weight: 300;
     font-size: 1.4em;
     color: ghostwhite;
   }
-  
+
   .h1-large {
-    font-family: 'Noto Sans Mono', monospace, sans-serif;
+    font-family: "Noto Sans Mono", monospace, sans-serif;
     font-size: 100px;
     font-size: 2em;
     font-weight: 100;
-    color: #04DE00;
+    color: #04de00;
   }
-
 }
